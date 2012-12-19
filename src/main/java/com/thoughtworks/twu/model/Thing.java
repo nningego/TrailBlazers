@@ -1,19 +1,18 @@
 package com.thoughtworks.twu.model;
 
-import java.io.Serializable;
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-
-import org.hibernate.validator.constraints.Email;
-import org.hibernate.validator.constraints.NotEmpty;
+import java.io.Serializable;
 
 @Entity
-@Table(name = "users")
-public class User implements Serializable {
+@Table(name = "things")
+public class Thing implements Serializable {
 
 	private static final long serialVersionUID = -4060739788760795254L;
 
@@ -29,7 +28,7 @@ public class User implements Serializable {
 	private String email;
 
 	@NotNull
-	private String address;
+	private String description;
 	
 
 	public Long getId() {
@@ -50,11 +49,11 @@ public class User implements Serializable {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getAddress() {
-		return address;
+	public String getDescription() {
+		return description;
 	}
-	public void setAddress(String address) {
-		this.address = address;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	
 }
