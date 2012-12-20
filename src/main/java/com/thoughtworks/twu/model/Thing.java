@@ -1,12 +1,12 @@
 package com.thoughtworks.twu.model;
 
-import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.DecimalMax;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
@@ -23,9 +23,10 @@ public class Thing implements Serializable {
 	@NotEmpty
 	private String name;
 
-	@Email
-	@NotEmpty
-	private String email;
+    //TODO: need to make price numeric
+	@DecimalMax("99999")
+    @NotNull
+	private String price;
 
 	@NotNull
 	private String description;
@@ -43,11 +44,11 @@ public class Thing implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getEmail() {
-		return email;
+	public String getPrice() {
+		return price;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setPrice(String price) {
+		this.price = price;
 	}
 	public String getDescription() {
 		return description;
