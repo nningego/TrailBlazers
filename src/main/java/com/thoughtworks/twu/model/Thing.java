@@ -9,6 +9,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.DecimalMax;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 @Entity
 @Table(name = "things")
@@ -23,10 +24,9 @@ public class Thing implements Serializable {
 	@NotEmpty
 	private String name;
 
-    //TODO: need to make price numeric
 	@DecimalMax("99999")
     @NotNull
-	private String price;
+	private BigDecimal price;
 
 	@NotNull
 	private String description;
@@ -44,10 +44,10 @@ public class Thing implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getPrice() {
+	public BigDecimal getPrice() {
 		return price;
 	}
-	public void setPrice(String price) {
+	public void setPrice(BigDecimal price) {
 		this.price = price;
 	}
 	public String getDescription() {
