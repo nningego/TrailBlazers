@@ -16,16 +16,16 @@ Requirements:
 2. Start postgres server,
 - create database testtrailblazers :see test-persistance-config.xml, no need to create tables inside as tests will do it
 - create database trailblazers :see persistance-config.xml
-        - create table item {CREATE TABLE item
-                             (
-                               item_id bigint NOT NULL,
-                               description character varying(255) NOT NULL,
-                               name character varying(255) NOT NULL,
-                               price numeric(19,2) NOT NULL,
-                               type character varying(255) NOT NULL,
-                               CONSTRAINT item_pkey PRIMARY KEY (item_id)
-                             );
-
+        - create table item {
+                                CREATE TABLE item
+                                (
+                                  item_id bigserial NOT NULL,
+                                  description character varying(255) NOT NULL,
+                                  name character varying(255) NOT NULL,
+                                  price numeric(19,2) NOT NULL,
+                                  type character varying(255) NOT NULL,
+                                  CONSTRAINT item_pkey PRIMARY KEY (item_id)
+                                );
                              }
 
 3. Run the unit tests:

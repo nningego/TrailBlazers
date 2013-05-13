@@ -24,7 +24,7 @@ public class ItemDaoImplTest extends DaoTest {
 		Assert.assertEquals("Frame1", items.get(0).getName());
 		Assert.assertEquals(BigDecimal.valueOf(13.99), items.get(0).getPrice());
 		Assert.assertEquals("this frame is awesome", items.get(0).getDescription());
-		Assert.assertEquals(ItemType.TYPE.FRAME.toString(), items.get(0).getType());
+		Assert.assertEquals(ItemType.FRAME.name(), items.get(0).getType());
 	}
 
     private Item makeItem() {
@@ -32,7 +32,7 @@ public class ItemDaoImplTest extends DaoTest {
         item.setName("Frame1");
         item.setPrice(BigDecimal.valueOf(13.99));
         item.setDescription("this frame is awesome");
-        item.setType(ItemType.TYPE.FRAME.toString());
+        item.setType(ItemType.FRAME.name());
         return item;
     }
 
